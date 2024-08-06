@@ -1,0 +1,14 @@
+header {
+    background-image: url('Images/runewoodsBackground.png');
+    padding: 50px;
+    color: #FFF;
+    text-align: center
+}
+
+body {
+    background-color: #f5ead5
+}
+
+form {
+    padding: 50px;
+}
