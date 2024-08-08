@@ -14,6 +14,19 @@
 
 <body>
     <form>
+        <h2>Basic Information</h2>
+
+        <label for="rukname">Rukaan name/ID:</label>
+        <input type="text" id="rukname" name="rukname"><br>
+
+        <label for="rukimport">Rukaan Import Link:</label>
+        <input type="text" id="rukimport" name="rukimport"><br>
+
+        <label for="runetracker">Rukaan Runemark Tracker:</label>
+        <input type="text" id="runetracker" name="runetracker"><br>
+
+        <h2>Art Bonuses</h2>
+
         <h3>Rukaan Visibility</h3>
         <input type="checkbox" id="headshot" name="headshot" value="headshot">
         <label for="headshot"> Headshot</label><br>
@@ -39,7 +52,49 @@
         <label for="partialbodyhandler"> Partialbody Handler</label><br>
         <input type="checkbox" id="fullbodyhandler" name="fullbodyhandler" value="fullbodyhandler">
         <label for="fullbodyhandler"> Fullbody Handler</label><br>
+
+        <h3>Animation</h3>
+        <input type="checkbox" id="smallanimation" name="smallanimation" value="smallanimation">
+        <label for="smallanimation"> Small Animation</label><br>
+        <input type="checkbox" id="mediumanimation" name="mediumanimation" value="mediumanimation">
+        <label for="mediumanimation"> Medium Animation</label><br>
+        <input type="checkbox" id="largeanimation" name="largeanimation" value="largeanimation">
+        <label for="largeanimation"> Large Animation</label><br>
+
+        <h2>Literature Bonuses</h2>
+
+        <h3>Wordcount</h3>
+
+        <h2>Additional Bonuses for Art and Literature</h2>
+
+        <h2>Items, Companions, and Traits with Rune Mark Bonuses</h2>
+
+        <h2>Rune Mark Bonuses from Other Sources</h2>
+
+        <input type="button" value="Submit" onclick="returnForm()">
+
     </form>
+
+    <div id="rmform"></div>
+
+    <script>
+        function returnForm() {
+            var result = "";
+            var rukName = document.getElementById("rukname").value;
+            var rukLink = document.getElementById("rukimport").value;
+            var runetracker = document.getElementById("runetracker").value;
+            
+            var importLink = "<a href=\"" + rukLink + "\">" + rukName + "</a>";
+            var runeTrackerLinke = "<a href=\"" + runetracker + "\">Rune Mark Tracker</a>";
+
+            result += "Import Link: ";
+            result += importLink + "<br>";
+            result += "Link to Rune Mark Tracker: ";
+            result += runeTrackerLinke + "<br>";
+            result += "Rune Mark Points and Bonuses: ";
+            document.getElementById("rmform").innerHTML = result;
+        }
+    </script>
 </body>
 
 </html>
